@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DARKSTATE TERMINAL</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>PROJECT DARKSTATE // TERMINAL</h2>
+
+<div id="terminal">
+  <p>Type "help" or "database"</p>
+  <input id="cmd" />
+</div>
+
+<div id="output"></div>
+
+<script src="database.js"></script>
+<script>
+
+const input = document.getElementById("cmd");
+const output = document.getElementById("output");
+
+const commands = {
+  help: "Commands: database, status, logout",
+  status: "SYSTEM ONLINE // 3 NODES ACTIVE",
+  logout: () => window.location.href = "index.html"
+};
+
+input.addEventListener("keydown", function(e) {
+  if (e.key === "Enter") {
+    const value = input.value;
+
+    const line = document.createElement("p");
+    line.textContent = ">> " + value;
+    output.appendChild(line);
+
+    if (value === "database") {
+      showDatabase();
+    } else if (commands[value]) {
+      const res = document.createElement("p");
+      res.textContent = typeof commands[value] === "function" ? commands[value]() : commands[value];
+      output.appendChild(res);
+    } else {
+      const res = document.createElement("p");
+      res.textContent = "UNKNOWN COMMAND";
+      output.appendChild(res);
+    }
+
+    input.value = "";
+  }
+});
+
+function showDatabase() {
+  const db = document.createElement("div");
+  db.innerHTML = `
+    <h3>NODE DATABASE</h3>
+    <ul>
+      <li><a href="pages/node-alpha.html">NODE-ALPHA</a></li>
+      <li><a href="pages/node-beta.html">NODE-BETA</a></li>
+      <li><a href="pages/node-gamma.html">NODE-GAMMA</a></li>
+    </ul>
+  `;
+  output.appendChild(db);
+}
+
+</script>
+
+</body>
+</html>
