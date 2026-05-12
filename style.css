@@ -2,25 +2,32 @@ body {
   background: black;
   color: #00ff66;
   font-family: monospace;
-  margin: 0;
-  padding: 20px;
+  text-align: center;
 }
 
-#terminal {
-  max-width: 900px;
+.center {
+  margin-top: 10%;
 }
 
 input {
   background: black;
-  border: none;
   color: #00ff66;
-  font-family: monospace;
-  font-size: 16px;
-  outline: none;
-  width: 90%;
+  border: 1px solid #00ff66;
+  padding: 8px;
 }
 
-.input-line {
-  display: flex;
-  gap: 10px;
+button {
+  background: #00ff66;
+  color: black;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+#terminal {
+  margin-top: 20px;
+}
+
+a {
+  color: #00ff66;
 }

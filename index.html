@@ -1,21 +1,23 @@
+<!DOCTYPE html>
+<html>
 <head>
-  <title>ARRS Terminal</title>
+  <title>PROJECT DARKSTATE</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="terminal">
-  <div id="output">
-    <p>ARRS Terminal v1.7</p>
-    <p>Type "help"</p>
-  </div>
+<div class="center">
+  <h1>PROJECT DARKSTATE</h1>
+  <p>AUTHORIZED PERSONNEL ONLY</p>
 
-  <div class="input-line">
-    <span>>></span>
-    <input type="text" id="input" autofocus />
-  </div>
+  <input id="user" placeholder="Username" /><br><br>
+  <input id="pass" type="password" placeholder="Password" /><br><br>
+
+  <button onclick="login()">ACCESS</button>
+
+  <p id="error"></p>
 </div>
 
-<script src="script.js"></script>
+<script src="login.js"></script>
 </body>
 </html>
